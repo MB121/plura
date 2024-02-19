@@ -1,10 +1,10 @@
-import Sidebar from "@/components/sidebar";
 import Unauthorized from "@/components/unauthorized";
 import {
   getNotificationAndUser,
   verifyAndAcceptInvitation,
 } from "@/lib/queries";
 import { currentUser } from "@clerk/nextjs";
+import { Sidebar } from "lucide-react";
 import { redirect } from "next/navigation";
 import React from "react";
 
@@ -38,9 +38,7 @@ const Layout = async ({ children, params }: Props) => {
   return (
     <div className="h-screen overflow-hidden">
       <Sidebar id={params?.agencyId} type="agency" />
-      <div className="md:pl-[300px]">
-        <>{children}</>
-      </div>
+      <div className="md:pl-[300px]"></div>
     </div>
   );
 };
