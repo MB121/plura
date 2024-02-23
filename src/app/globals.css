@@ -57,7 +57,7 @@ B (255 */
        URL: https://gradient.page */
 
     /* CSS: .bg-gradient { background: var(--gradient) } */
-    --gradient: linear-gradient(to top left, #1A2980, #26D0CE)
+    --gradient: linear-gradient(to top left, #007adf, #00ecbc);
 
     --background: 220 65% 3.52%;
     --foreground: 220 10% 97.2%;

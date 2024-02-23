@@ -89,7 +89,7 @@ const AgencyDetails = ({ data }: Props) => {
     },
   });
   const isLoading = form.formState.isSubmitting;
-  console.log("isLoading", isLoading);
+
   useEffect(() => {
     if (data) {
       form.reset(data);
