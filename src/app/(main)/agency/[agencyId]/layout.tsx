@@ -1,3 +1,5 @@
+import BlurPage from "@/components/global/blur-page";
+import InfoBar from "@/components/global/infobar";
 import Sidebar from "@/components/sidebar";
 import Unauthorized from "@/components/unauthorized";
 import {
@@ -9,7 +11,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {
-  children: React.ReactDOM;
+  children: React.ReactNode;
   params: { agencyId: string };
 };
 
@@ -39,7 +41,10 @@ const Layout = async ({ children, params }: Props) => {
     <div className="h-screen overflow-hidden">
       <Sidebar id={params?.agencyId} type="agency" />
       <div className="md:pl-[300px]">
-        <>{children}</>
+        <InfoBar notifications={allNoti} />
+        <div className="relative">
+          <BlurPage>{children}</BlurPage>
+        </div>
       </div>
     </div>
   );
