@@ -1,5 +1,5 @@
-import AgencyDetails from "@/components/form/agency-details";
-import UserDetails from "@/components/form/user-details";
+import AgencyDetails from "@/components/forms/agency-details";
+import UserDetails from "@/components/forms/user-details";
 import { db } from "@/lib/db";
 import { currentUser } from "@clerk/nextjs";
 import React from "react";
@@ -32,7 +32,7 @@ const SettingPage = async ({ params }: props) => {
   const subAccount = agencyDetails.SubAccount;
 
   return (
-    <div className="flex ld:!flex-row flex-col gap-4">
+    <div className="flex lg:!flex-row flex-col gap-4">
       <AgencyDetails data={agencyDetails} />
       <UserDetails
         type="agency"

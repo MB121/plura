@@ -150,8 +150,8 @@ const SubAccountDetails: React.FC<SubAccountDetailsProps> = ({
                   <FormControl>
                     <FileUpload
                       apiEndpoint="subaccountLogo"
-                      value={field.value}
                       onChange={field.onChange}
+                      value={field.value}
                     />
                   </FormControl>
                   <FormMessage />
