@@ -80,9 +80,9 @@ const TicketForm = ({ laneId, subaccountId, getNewTicket }: Props) => {
     if (subaccountId) {
       const fetchData = async () => {
         const response = await getSubAccountTeamMembers(subaccountId);
-        console.log(response);
         if (response) setAllTeamMembers(response);
       };
+      fetchData();
     }
   }, [subaccountId]);
 
@@ -102,7 +102,9 @@ const TicketForm = ({ laneId, subaccountId, getNewTicket }: Props) => {
           // @ts-ignore
           defaultData?.ticket?.Customer?.name
         );
+        setContactList(response);
       };
+      fetchData();
     }
   }, [defaultData]);
 
@@ -176,6 +178,19 @@ const TicketForm = ({ laneId, subaccountId, getNewTicket }: Props) => {
                     <Textarea placeholder="Description" {...field} />
                   </FormControl>
                   <FormControl />
+                </FormItem>
+              )}
+            />
+            <FormField
+              disabled={isLoading}
+              control={form.control}
+              name="value"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Ticket Value</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Value" {...field} />
+                  </FormControl>
                 </FormItem>
               )}
             />
