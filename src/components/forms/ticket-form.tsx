@@ -140,6 +140,7 @@ const TicketForm = ({ laneId, subaccountId, getNewTicket }: Props) => {
         description: "Could not save pipeline details",
       });
     }
+    setClose();
   };
 
   return (

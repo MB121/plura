@@ -80,7 +80,10 @@ const PipelineTicket = ({
           laneId={ticket.laneId}
           subaccountId={subaccountId}
         />
-      </CustomModal>
+      </CustomModal>,
+      async () => {
+        return { ticket: ticket };
+      }
     );
   };
 
